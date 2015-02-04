@@ -1,0 +1,6 @@
+- name: put hdfs-secondary.rb eye config file
+  template: src=hdfs/secondary.rb dest=/etc/eye/hdfs-secondary.rb owner=root group=root mode=0644
+
+- name: load config in eye
+  command: bash -c "source /usr/local/rvm/scripts/rvm && eye l /etc/eye/apps.eye"
+  sudo: yes
